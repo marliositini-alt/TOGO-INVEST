@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#082f49">
+  <title>Togo Invest — Espace membre</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">TI</span><span>TOGO <b>INVEST</b></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">☰</button>
+    <nav id="nav">
+      <a href="#dashboard">Tableau de bord</a>
+      <a href="#plans">Investissements</a>
+      <a href="#transactions">Transactions</a>
+      <a href="#referral">Parrainage</a>
+    </nav>
+    <button class="btn btn-outline" id="logoutBtn">Déconnexion</button>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="profile">
+        <div class="avatar" id="avatar">TI</div>
+        <div><strong id="profileName">Visiteur</strong><small id="profileEmail">Mode démonstration</small></div>
+      </div>
+      <a class="side-link active" href="#dashboard">▦ <span>Vue d'ensemble</span></a>
+      <a class="side-link" href="#plans">◈ <span>Plans d'investissement</span></a>
+      <a class="side-link" href="#deposit">＋ <span>Faire un dépôt</span></a>
+      <a class="side-link" href="#withdraw">↗ <span>Demander un retrait</span></a>
+      <a class="side-link" href="#transactions">↻ <span>Historique</span></a>
+      <a class="side-link" href="#referral">♧ <span>Parrainage</span></a>
+      <div class="sidebar-note"><strong>Mode démo</strong><p>Les opérations affichées ne déplacent pas d'argent réel.</p></div>
+    </aside>
+
+    <section class="content">
+      <div class="welcome" id="dashboard">
+        <div><p class="eyebrow">ESPACE MEMBRE</p><h1>Bonjour, <span id="welcomeName">Visiteur</span> 👋</h1><p class="muted">Voici le résumé de votre compte Togo Invest.</p></div>
+        <button class="btn btn-primary" onclick="document.querySelector('#deposit').scrollIntoView({behavior:'smooth'})">＋ Nouveau dépôt</button>
+      </div>
+
+      <div class="demo-alert"><strong>Prototype de démonstration</strong> — les soldes, plans et transactions sont fictifs. Aucun paiement réel n'est connecté.</div>
+
+      <div class="stats">
+        <article class="stat-card"><div class="stat-icon blue">◉</div><p>Solde disponible</p><h2 id="availableBalance">0 FCFA</h2><small>Montant de démonstration</small></article>
+        <article class="stat-card"><div class="stat-icon green">↗</div><p>Total investi</p><h2 id="investedTotal">0 FCFA</h2><small>Investissements simulés</small></article>
+        <article class="stat-card"><div class="stat-icon gold">✦</div><p>Gains enregistrés</p><h2 id="profitTotal">0 FCFA</h2><small>Aucun gain garanti</small></article>
+        <article class="stat-card"><div class="stat-icon purple">♧</div><p>Filleuls</p><h2 id="referralCount">0</h2><small>En mode démonstration</small></article>
+      </div>
+
+      <section class="panel" id="plans">
+        <div class="section-heading"><div><p class="eyebrow">DÉCOUVRIR</p><h2>Plans d'investissement</h2></div><span class="pill">Exemples fictifs</span></div>
+        <p class="muted">Ces cartes illustrent la présentation d'offres. Elles ne constituent pas une proposition financière réelle.</p>
+        <div class="plan-grid">
+          <article class="plan-card"><div class="plan-top"><span class="plan-symbol">🌱</span><span class="pill">Débutant</span></div><h3>Plan Essentiel</h3><p class="plan-amount">5 000 – 25 000 <small>FCFA</small></p><p class="muted">Suivi de portefeuille et historique de démonstration.</p><button class="btn btn-primary full" data-plan="Plan Essentiel" data-amount="5000">Tester ce plan</button></article>
+          <article class="plan-card featured"><div class="plan-top"><span class="plan-symbol">📈</span><span class="pill pill-light">Populaire</span></div><h3>Plan Croissance</h3><p class="plan-amount">25 000 – 100 000 <small>FCFA</small></p><p class="muted">Interface de suivi pour un portefeuille simulé.</p><button class="btn btn-white full" data-plan="Plan Croissance" data-amount="25000">Tester ce plan</button></article>
+          <article class="plan-card"><div class="plan-top"><span class="plan-symbol">🏆</span><span class="pill">Avancé</span></div><h3>Plan Ambition</h3><p class="plan-amount">100 000+ <small>FCFA</small></p><p class="muted">Suivi avancé et rapports de démonstration.</p><button class="btn btn-primary full" data-plan="Plan Ambition" data-amount="100000">Tester ce plan</button></article>
+        </div>
+      </section>
+
+      <div class="two-col">
+        <section class="panel" id="deposit">
+          <div class="section-heading"><div><p class="eyebrow">ALIMENTER LE COMPTE</p><h2>Demande de dépôt</h2></div><span class="panel-icon">＋</span></div>
+          <form id="depositForm">
+            <label for="depositAmount">Montant (FCFA)</label><input id="depositAmount" type="number" min="500" step="500" placeholder="Ex. 5000" required>
+            <label for="depositMethod">Moyen de paiement souhaité</label><select id="depositMethod" required><option value="">Choisir un moyen</option><option>ALTPAY</option><option>TMoney</option><option>Flooz</option></select>
+            <label for="depositPhone">Numéro de téléphone (facultatif)</label><input id="depositPhone" type="tel" placeholder="+228 XX XX XX XX">
+            <button class="btn btn-primary full" type="submit">Créer une demande de test</button>
+            <p class="form-note">Aucun paiement ne sera débité. Intégration réelle à effectuer avec un prestataire autorisé.</p>
+          </form>
+        </section>
+        <section class="panel" id="withdraw">
+          <div class="section-heading"><div><p class="eyebrow">SORTIE DE FONDS</p><h2>Demande de retrait</h2></div><span class="panel-icon">↗</span></div>
+          <form id="withdrawForm">
+            <label for="withdrawAmount">Montant (FCFA)</label><input id="withdrawAmount" type="number" min="500" step="500" placeholder="Ex. 5000" required>
+            <label for="withdrawMethod">Recevoir via</label><select id="withdrawMethod" required><option value="">Choisir un moyen</option><option>TMoney</option><option>Flooz</option><option>ALTPAY</option></select>
+            <label for="withdrawPhone">Numéro du bénéficiaire</label><input id="withdrawPhone" type="tel" placeholder="+228 XX XX XX XX" required>
+            <button class="btn btn-primary full" type="submit">Créer une demande de test</button>
+            <p class="form-note">Le retrait reste une simulation, sans transfert d'argent réel.</p>
+          </form>
+        </section>
+      </div>
+
+      <section class="panel" id="transactions">
+        <div class="section-heading"><div><p class="eyebrow">ACTIVITÉ DU COMPTE</p><h2>Transactions récentes</h2></div><button class="btn btn-outline btn-small" id="clearHistory">Effacer l'historique démo</button></div>
+        <div class="table-wrap"><table><thead><tr><th>Référence</th><th>Opération</th><th>Moyen</th><th>Montant</th><th>Date</th><th>Statut</th></tr></thead><tbody id="transactionsBody"><tr class="empty-row"><td colspan="6">Aucune transaction pour le moment.</td></tr></tbody></table></div>
+      </section>
+
+      <section class="panel referral-panel" id="referral">
+        <div><p class="eyebrow">COMMUNAUTÉ</p><h2>Votre espace de parrainage</h2><p class="muted">Un code de démonstration peut être partagé pour tester l'interface. Aucun bonus financier automatique n'est activé.</p></div>
+        <div class="referral-code"><span>VOTRE CODE</span><strong id="referralCode">TOGODEMO</strong><button class="btn btn-white" id="copyCode">Copier le code</button></div>
+      </section>
+
+      <footer>© <span id="year"></span> Togo Invest · Prototype web · <a href="#legal">Mentions importantes</a></footer>
+      <div id="legal" class="legal-note">Avant tout lancement public, ajouter une politique de confidentialité, des conditions d'utilisation, une sécurité serveur, un système d'administration et vérifier les autorisations réglementaires applicables. Ne jamais afficher de rendements garantis sans base réelle.</div>
+    </section>
+  </main>
+
+  <dialog id="loginDialog">
+    <form method="dialog" id="loginForm" class="login-box">
+      <div class="login-logo">TI</div><h2>Bienvenue sur Togo Invest</h2><p class="muted">Entrez un nom pour ouvrir la démonstration locale.</p>
+      <label for="userName">Votre nom</label><input id="userName" maxlength="40" placeholder="Ex. Koffi" required>
+      <label for="userEmail">Adresse e-mail (facultatif)</label><input id="userEmail" type="email" placeholder="vous@exemple.com">
+      <button class="btn btn-primary full" value="continue">Entrer dans la démo</button>
+      <p class="form-note">Cette page ne crée pas encore de compte sécurisé. Les données sont conservées dans ce navigateur uniquement.</p>
+    </form>
+  </dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
