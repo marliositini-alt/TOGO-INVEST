@@ -1,113 +1,117 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#082f49">
-  <title>Togo Invest — Espace membre</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <title>Se connecter - TOGO INVEST</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="TOGO INVEST, investissement">
+    <meta name="description" content="Connexion à la plateforme TOGO INVEST">
+    <link rel="stylesheet" href="/Lay/css/layui.css">
+    <script src="/Lay/layui.js"></script>
+    <script src="/js/comm.js"></script>
+    <script src="/js/jquery-1.11.0.min.js"></script>
+    <script src="/Lay/lay/modules/i18n.js"></script>
+    <link href="/css/main.css?v2.7" rel="stylesheet">
+    <link href="/css/loader.css" rel="stylesheet">
+    <script>
+      window.addEventListener('load', function () {
+        const loader = document.getElementById('loader-wrapper');
+        if (loader) {
+          loader.classList.add('fade-out');
+          loader.addEventListener('transitionend', function () {
+            loader.remove();
+          });
+        }
+      });
+
+      // Cette page nécessite les fichiers du projet et un serveur d'authentification.
+      // Le formulaire ne doit pas être utilisé pour collecter de vrais mots de passe
+      // tant que le serveur sécurisé n'est pas configuré.
+      document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('loginForm');
+        if (form) {
+          form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert("Maquette TOGO INVEST : le serveur de connexion n'est pas encore configuré.");
+          });
+        }
+      });
+    </script>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { width:100%; min-height:100%; margin:0; }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        color:#10213c;
+        background:
+          linear-gradient(135deg, rgba(5,24,47,.94), rgba(5,24,47,.72)),
+          url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85")
+          center/cover fixed no-repeat;
+      }
+      .page { max-width:1000px; margin:0 auto; padding:24px 18px 36px; }
+      .brand { text-align:center; padding:35px 10px 25px; color:#fff; }
+      .brand .logo { font-size:32px; font-weight:900; letter-spacing:1px; }
+      .brand .logo span { color:#e9bc65; }
+      .brand p { color:#e0e8f0; line-height:1.6; margin:12px auto 0; max-width:550px; }
+      .layout { display:grid; grid-template-columns:1fr 400px; gap:30px; align-items:center; }
+      .intro { color:#fff; padding:20px; }
+      .intro .tag { color:#e9bc65; font-weight:bold; letter-spacing:2px; font-size:12px; }
+      .intro h1 { font-size:clamp(34px,5vw,54px); line-height:1.12; margin:18px 0; }
+      .intro h1 span { color:#e9bc65; }
+      .intro p { color:#d7e1ec; line-height:1.8; }
+      .card { background:rgba(255,255,255,.97); border-radius:18px; padding:28px; box-shadow:0 18px 55px rgba(0,0,0,.3); }
+      .card h2 { margin:0 0 8px; font-size:25px; }
+      .sub { color:#64748b; font-size:14px; margin:0 0 24px; line-height:1.6; }
+      .field { margin-bottom:16px; }
+      label { display:block; font-size:13px; font-weight:bold; margin-bottom:7px; }
+      input[type=text], input[type=tel], input[type=password] {
+        width:100%; height:46px; padding:0 13px; border:1px solid #d8e0e8;
+        border-radius:8px; background:#f9fbfd; font-size:14px; outline:none;
+      }
+      input:focus { border-color:#16b86a; box-shadow:0 0 0 3px rgba(22,184,106,.12); }
+      .remember { display:flex; align-items:center; gap:8px; color:#526174; font-size:12px; margin:8px 0 20px; }
+      .submit { width:100%; height:48px; border:0; border-radius:25px; background:#16b86a; color:#fff; font-size:16px; font-weight:bold; cursor:pointer; }
+      .signup { text-align:center; margin-top:20px; color:#64748b; font-size:13px; }
+      .signup a { color:#07894b; font-weight:bold; }
+      .disclaimer { background:#f0f7f3; color:#476254; font-size:11px; line-height:1.6; padding:12px; border-radius:8px; margin-top:20px; }
+      footer { color:#d1dbe5; text-align:center; font-size:12px; padding:25px 10px 0; line-height:1.7; }
+      @media(max-width:800px) { .layout { grid-template-columns:1fr; gap:10px; } .intro { text-align:center; padding:10px 5px; } .intro h1 { font-size:38px; } .card { width:100%; max-width:430px; margin:0 auto; } .brand { padding-top:20px; } }
+    </style>
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#"><span class="brand-mark">TI</span><span>TOGO <b>INVEST</b></span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">☰</button>
-    <nav id="nav">
-      <a href="#dashboard">Tableau de bord</a>
-      <a href="#plans">Investissements</a>
-      <a href="#transactions">Transactions</a>
-      <a href="#referral">Parrainage</a>
-    </nav>
-    <button class="btn btn-outline" id="logoutBtn">Déconnexion</button>
-  </header>
+  <main class="page">
+    <header class="brand">
+      <div class="logo">TOGO <span>INVEST</span></div>
+      <p>Investissement, innovation et développement pour construire le Togo de demain.</p>
+    </header>
 
-  <main class="layout">
-    <aside class="sidebar" id="sidebar">
-      <div class="profile">
-        <div class="avatar" id="avatar">TI</div>
-        <div><strong id="profileName">Visiteur</strong><small id="profileEmail">Mode démonstration</small></div>
-      </div>
-      <a class="side-link active" href="#dashboard">▦ <span>Vue d'ensemble</span></a>
-      <a class="side-link" href="#plans">◈ <span>Plans d'investissement</span></a>
-      <a class="side-link" href="#deposit">＋ <span>Faire un dépôt</span></a>
-      <a class="side-link" href="#withdraw">↗ <span>Demander un retrait</span></a>
-      <a class="side-link" href="#transactions">↻ <span>Historique</span></a>
-      <a class="side-link" href="#referral">♧ <span>Parrainage</span></a>
-      <div class="sidebar-note"><strong>Mode démo</strong><p>Les opérations affichées ne déplacent pas d'argent réel.</p></div>
-    </aside>
-
-    <section class="content">
-      <div class="welcome" id="dashboard">
-        <div><p class="eyebrow">ESPACE MEMBRE</p><h1>Bonjour, <span id="welcomeName">Visiteur</span> 👋</h1><p class="muted">Voici le résumé de votre compte Togo Invest.</p></div>
-        <button class="btn btn-primary" onclick="document.querySelector('#deposit').scrollIntoView({behavior:'smooth'})">＋ Nouveau dépôt</button>
-      </div>
-
-      <div class="demo-alert"><strong>Prototype de démonstration</strong> — les soldes, plans et transactions sont fictifs. Aucun paiement réel n'est connecté.</div>
-
-      <div class="stats">
-        <article class="stat-card"><div class="stat-icon blue">◉</div><p>Solde disponible</p><h2 id="availableBalance">0 FCFA</h2><small>Montant de démonstration</small></article>
-        <article class="stat-card"><div class="stat-icon green">↗</div><p>Total investi</p><h2 id="investedTotal">0 FCFA</h2><small>Investissements simulés</small></article>
-        <article class="stat-card"><div class="stat-icon gold">✦</div><p>Gains enregistrés</p><h2 id="profitTotal">0 FCFA</h2><small>Aucun gain garanti</small></article>
-        <article class="stat-card"><div class="stat-icon purple">♧</div><p>Filleuls</p><h2 id="referralCount">0</h2><small>En mode démonstration</small></article>
-      </div>
-
-      <section class="panel" id="plans">
-        <div class="section-heading"><div><p class="eyebrow">DÉCOUVRIR</p><h2>Plans d'investissement</h2></div><span class="pill">Exemples fictifs</span></div>
-        <p class="muted">Ces cartes illustrent la présentation d'offres. Elles ne constituent pas une proposition financière réelle.</p>
-        <div class="plan-grid">
-          <article class="plan-card"><div class="plan-top"><span class="plan-symbol">🌱</span><span class="pill">Débutant</span></div><h3>Plan Essentiel</h3><p class="plan-amount">5 000 – 25 000 <small>FCFA</small></p><p class="muted">Suivi de portefeuille et historique de démonstration.</p><button class="btn btn-primary full" data-plan="Plan Essentiel" data-amount="5000">Tester ce plan</button></article>
-          <article class="plan-card featured"><div class="plan-top"><span class="plan-symbol">📈</span><span class="pill pill-light">Populaire</span></div><h3>Plan Croissance</h3><p class="plan-amount">25 000 – 100 000 <small>FCFA</small></p><p class="muted">Interface de suivi pour un portefeuille simulé.</p><button class="btn btn-white full" data-plan="Plan Croissance" data-amount="25000">Tester ce plan</button></article>
-          <article class="plan-card"><div class="plan-top"><span class="plan-symbol">🏆</span><span class="pill">Avancé</span></div><h3>Plan Ambition</h3><p class="plan-amount">100 000+ <small>FCFA</small></p><p class="muted">Suivi avancé et rapports de démonstration.</p><button class="btn btn-primary full" data-plan="Plan Ambition" data-amount="100000">Tester ce plan</button></article>
-        </div>
+    <div class="layout">
+      <section class="intro">
+        <div class="tag">INVESTISSEMENT • INNOVATION • AVENIR</div>
+        <h1>Construisons ensemble le <span>Togo de demain.</span></h1>
+        <p>Découvrez les projets liés aux infrastructures, à l'immobilier, à l'énergie et à l'entrepreneuriat. Étudiez les risques et les conditions avant toute décision d'investissement.</p>
       </section>
 
-      <div class="two-col">
-        <section class="panel" id="deposit">
-          <div class="section-heading"><div><p class="eyebrow">ALIMENTER LE COMPTE</p><h2>Demande de dépôt</h2></div><span class="panel-icon">＋</span></div>
-          <form id="depositForm">
-            <label for="depositAmount">Montant (FCFA)</label><input id="depositAmount" type="number" min="500" step="500" placeholder="Ex. 5000" required>
-            <label for="depositMethod">Moyen de paiement souhaité</label><select id="depositMethod" required><option value="">Choisir un moyen</option><option>ALTPAY</option><option>TMoney</option><option>Flooz</option></select>
-            <label for="depositPhone">Numéro de téléphone (facultatif)</label><input id="depositPhone" type="tel" placeholder="+228 XX XX XX XX">
-            <button class="btn btn-primary full" type="submit">Créer une demande de test</button>
-            <p class="form-note">Aucun paiement ne sera débité. Intégration réelle à effectuer avec un prestataire autorisé.</p>
-          </form>
-        </section>
-        <section class="panel" id="withdraw">
-          <div class="section-heading"><div><p class="eyebrow">SORTIE DE FONDS</p><h2>Demande de retrait</h2></div><span class="panel-icon">↗</span></div>
-          <form id="withdrawForm">
-            <label for="withdrawAmount">Montant (FCFA)</label><input id="withdrawAmount" type="number" min="500" step="500" placeholder="Ex. 5000" required>
-            <label for="withdrawMethod">Recevoir via</label><select id="withdrawMethod" required><option value="">Choisir un moyen</option><option>TMoney</option><option>Flooz</option><option>ALTPAY</option></select>
-            <label for="withdrawPhone">Numéro du bénéficiaire</label><input id="withdrawPhone" type="tel" placeholder="+228 XX XX XX XX" required>
-            <button class="btn btn-primary full" type="submit">Créer une demande de test</button>
-            <p class="form-note">Le retrait reste une simulation, sans transfert d'argent réel.</p>
-          </form>
-        </section>
-      </div>
-
-      <section class="panel" id="transactions">
-        <div class="section-heading"><div><p class="eyebrow">ACTIVITÉ DU COMPTE</p><h2>Transactions récentes</h2></div><button class="btn btn-outline btn-small" id="clearHistory">Effacer l'historique démo</button></div>
-        <div class="table-wrap"><table><thead><tr><th>Référence</th><th>Opération</th><th>Moyen</th><th>Montant</th><th>Date</th><th>Statut</th></tr></thead><tbody id="transactionsBody"><tr class="empty-row"><td colspan="6">Aucune transaction pour le moment.</td></tr></tbody></table></div>
+      <section class="card">
+        <h2>Bienvenue !</h2>
+        <p class="sub">Connectez-vous à votre espace TOGO INVEST.</p>
+        <form id="loginForm">
+          <div class="field">
+            <label for="moblie">Numéro de téléphone</label>
+            <input type="tel" id="moblie" name="telephone" placeholder="Ex. : +228 90 00 00 00" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" placeholder="Saisissez votre mot de passe" autocomplete="current-password" required>
+          </div>
+          <label class="remember"><input type="checkbox" id="rememberpassword"> Se souvenir de mon numéro</label>
+          <button class="submit" type="submit">Se connecter</button>
+        </form>
+        <p class="signup">Pas de compte ? <a href="reg.html">Créer un compte</a></p>
+        <div class="disclaimer"><strong>Note :</strong> cette version est une maquette visuelle. L'inscription et la connexion ne fonctionneront réellement qu'après la mise en place d'un serveur sécurisé.</div>
       </section>
-
-      <section class="panel referral-panel" id="referral">
-        <div><p class="eyebrow">COMMUNAUTÉ</p><h2>Votre espace de parrainage</h2><p class="muted">Un code de démonstration peut être partagé pour tester l'interface. Aucun bonus financier automatique n'est activé.</p></div>
-        <div class="referral-code"><span>VOTRE CODE</span><strong id="referralCode">TOGODEMO</strong><button class="btn btn-white" id="copyCode">Copier le code</button></div>
-      </section>
-
-      <footer>© <span id="year"></span> Togo Invest · Prototype web · <a href="#legal">Mentions importantes</a></footer>
-      <div id="legal" class="legal-note">Avant tout lancement public, ajouter une politique de confidentialité, des conditions d'utilisation, une sécurité serveur, un système d'administration et vérifier les autorisations réglementaires applicables. Ne jamais afficher de rendements garantis sans base réelle.</div>
-    </section>
+    </div>
+    <footer>© 2026 TOGO INVEST — Présentez clairement les frais, les risques et les conditions de chaque projet.</footer>
   </main>
-
-  <dialog id="loginDialog">
-    <form method="dialog" id="loginForm" class="login-box">
-      <div class="login-logo">TI</div><h2>Bienvenue sur Togo Invest</h2><p class="muted">Entrez un nom pour ouvrir la démonstration locale.</p>
-      <label for="userName">Votre nom</label><input id="userName" maxlength="40" placeholder="Ex. Koffi" required>
-      <label for="userEmail">Adresse e-mail (facultatif)</label><input id="userEmail" type="email" placeholder="vous@exemple.com">
-      <button class="btn btn-primary full" value="continue">Entrer dans la démo</button>
-      <p class="form-note">Cette page ne crée pas encore de compte sécurisé. Les données sont conservées dans ce navigateur uniquement.</p>
-    </form>
-  </dialog>
-  <div id="toast" role="status" aria-live="polite"></div>
-  <script src="app.js"></script>
 </body>
 </html>
